@@ -1,4 +1,3 @@
-local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Util = require(script.Parent.Parent:WaitForChild("Util"))
@@ -62,16 +61,9 @@ function AnimationAndParticle:stop()
 	self._stopped = true
 
 	self.Stopped:Fire()
+	self._animationController:stop()
 	self._particleController:stop()
 	self._trove:Destroy()
-
-	if self._character == Players.LocalPlayer.Character then
-		self:stopLocalPlayer()
-	end
-end
-
-function AnimationAndParticle:stopLocalPlayer()
-	self._animationController:stop()
 end
 
 return AnimationAndParticle
