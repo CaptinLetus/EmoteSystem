@@ -47,19 +47,9 @@ function AnimationAndParticle:play()
 
 	self._particleController:play()
 
-	if self._character == Players.LocalPlayer.Character then
-		self._animationController:play()
-	end
+	self._animationController:play()
 
 	self._trove:Connect(humanoid.Running, function()
-		self:stop()
-	end)
-end
-
-function AnimationAndParticle:playLocalPlayer()
-	self._animationTrack = Util.playAnimation(self._character, self._animation)
-
-	self._trove:Connect(self._animationTrack.Stopped, function()
 		self:stop()
 	end)
 end

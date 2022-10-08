@@ -20,3 +20,7 @@ end)
 stopSignal:Connect(function(player: Player)
 	stopSignal:FireAll(player.Character)
 end)
+
+task.wait(10)
+
+playSignal:FireAll(workspace.Dummy, "Dance", workspace:GetServerTimeNow())
