@@ -7,7 +7,7 @@ function Particle.new(character, particles)
 	local self = setmetatable({}, Particle)
 
 	self._character = character
-	self._particles = particles
+	self._particleTemplate = particles
 
 	return self
 end
@@ -20,9 +20,11 @@ function Particle:play()
 		return
 	end
 
-	local particles = self._particles:Clone()
+	local particles = self._particleTemplate:Clone()
 
 	particles.Parent = head
+
+	self._particles = particles
 end
 
 function Particle:stop()
