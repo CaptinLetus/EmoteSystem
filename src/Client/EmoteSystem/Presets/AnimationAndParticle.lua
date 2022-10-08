@@ -5,7 +5,6 @@ local Util = require(script.Parent.Parent:WaitForChild("Util"))
 local Controllers = script.Parent.Parent:WaitForChild("Controllers")
 local Trove = require(ReplicatedStorage.Packages.Trove)
 local Signal = require(ReplicatedStorage.Packages.Signal)
-
 local AnimationController = require(Controllers:WaitForChild("Animation"))
 local ParticleController = require(Controllers:WaitForChild("Particle"))
 
